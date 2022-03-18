@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "85762942481",
+    "project_id": "ichor-4e9d6",
+    "storage_bucket": "ichor-4e9d6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:85762942481:android:fd4d9a10bb00b81b0ff3b0",
+        "android_client_info": {
+          "package_name": "com.ichor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "85762942481-9tedma0g83rv8qc4idmjiudfpsf47b63.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ichor",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "85762942481-gnqg417h4vigvf296rtcji0v6sqth4lq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCya6uLs6hRpxpnrtBaAWR_OQqWapkVvMQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "85762942481-gnqg417h4vigvf296rtcji0v6sqth4lq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
