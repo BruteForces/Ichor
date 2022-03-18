@@ -2,8 +2,18 @@
  * @format
  */
 
-import {AppRegistry} from 'react-native';
-import App from './App';
-import {name as appName} from './app.json';
+import { AppRegistry } from "react-native";
+import App from "./src/App";
+import { name as appName } from "./app.json";
+import React from "react";
+import ContextProvider from "./src/context";
 
-AppRegistry.registerComponent(appName, () => App);
+const Root = () => {
+  return (
+    <ContextProvider>
+      <App />
+    </ContextProvider>
+  );
+};
+
+AppRegistry.registerComponent(appName, () => Root);
