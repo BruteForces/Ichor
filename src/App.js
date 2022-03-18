@@ -29,13 +29,13 @@ const App = () => {
   const { user } = useAuthContext();
   const dispatch = useAuthDispatchContext();
 
-  // useEffect(() => {
-  //   auth().onAuthStateChanged((user) => {
-  //     if (user) {
-  //       dispatch({ type: LOGIN_SUCCESS, payload: user });
-  //     }
-  //   });
-  // }, []);
+  useEffect(() => {
+    auth().onAuthStateChanged((user) => {
+      if (user) {
+        dispatch({ type: LOGIN_SUCCESS, payload: user });
+      }
+    });
+  }, []);
 
   return (
     <NavigationContainer>
@@ -43,6 +43,8 @@ const App = () => {
         <MainTab.Navigator
           screenOptions={{
             headerShown: false,
+            tabBarShowLabel: false,
+            tabBarIcon: ({ color, size, focused }) => {},
           }}
         >
           <MainTab.Screen
