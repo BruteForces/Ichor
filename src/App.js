@@ -13,9 +13,9 @@ import {
 import { HomeScreen, LoginScreen, RegisterScreen } from "./screens";
 import { NavigationContainer } from "@react-navigation/native";
 import { LOGIN_SUCCESS } from "./context/auth/constants";
-
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 const Stack = createNativeStackNavigator();
-
+const MainTab = createBottomTabNavigator();
 const App = () => {
   const { user } = useAuthContext();
   const dispatch = useAuthDispatchContext();
@@ -31,19 +31,19 @@ const App = () => {
   return (
     <NavigationContainer>
       {user ? (
-        <Stack.Navigator
+        <MainTab.Navigator
           screenOptions={{
             headerShown: false,
           }}
         >
-          <Stack.Screen
+          <MainTab.Screen
             name={HOME_SCREEN}
             component={HomeScreen}
             screenOptions={{
               headerShown: false,
             }}
           />
-        </Stack.Navigator>
+        </MainTab.Navigator>
       ) : (
         <Stack.Navigator
           screenOptions={{
