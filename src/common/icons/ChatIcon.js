@@ -1,13 +1,13 @@
-import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { Svg, Path } from "react-native-svg";
+import { Colors } from "../Design/Colors";
 
-const ChatIcon = () => {
+const ChatIcon = ({ focused }) => {
   return (
     <Svg
-      width="30"
-      height="30"
-      viewBox="0 0 30 30"
+      width="36"
+      height="36"
+      viewBox="0 0 36 36"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >

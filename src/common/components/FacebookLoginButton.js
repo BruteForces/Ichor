@@ -1,5 +1,5 @@
 import React from "react";
-import { FacebookIcon } from "../icons/FacebookIcon";
+import { FacebookIcon } from "../icons/";
 import { Colors } from "../Design/Colors";
 import { Button } from "native-base";
 

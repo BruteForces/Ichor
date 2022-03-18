@@ -19,12 +19,15 @@ import {
   ChatScreen,
   TopDonorsScreen,
 } from "./screens";
+import { ChatIcon, HomeIcon, MedalIcon } from "./common/icons";
 import { NavigationContainer } from "@react-navigation/native";
 import { LOGIN_SUCCESS } from "./context/auth/constants";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { Box } from "native-base";
 
 const AuthStack = createNativeStackNavigator();
 const MainTab = createBottomTabNavigator();
+
 const App = () => {
   const { user } = useAuthContext();
   const dispatch = useAuthDispatchContext();
@@ -41,11 +44,24 @@ const App = () => {
     <NavigationContainer>
       {user ? (
         <MainTab.Navigator
-          screenOptions={{
+          initialRouteName={HOME_SCREEN}
+          screenOptions={({ route }) => ({
             headerShown: false,
             tabBarShowLabel: false,
-            tabBarIcon: ({ color, size, focused }) => {},
-          }}
+            tabBarIcon: ({ color, size, focused }) => {
+              if (route.name === HOME_SCREEN) {
+                return <HomeIcon focused={focused} />;
+              } else if (route.name === CHAT_SCREEN) {
+                return (
+                  <Box mt={2}>
+                    <ChatIcon focused={focused} />
+                  </Box>
+                );
+              } else if (route.name === TOP_DONORS_SCREEN) {
+                return <MedalIcon focused={focused} />;
+              }
+            },
+          })}
         >
           <MainTab.Screen
             name={TOP_DONORS_SCREEN}
