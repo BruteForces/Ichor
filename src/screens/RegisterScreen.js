@@ -1,5 +1,3 @@
-import { View } from "react-native";
-
 import React, { useState } from "react";
 import { useAuthDispatchContext } from "../context/auth/AuthContext";
 import { registerUser } from "../context/auth/actions";
@@ -10,16 +8,13 @@ import {
   Input,
   Box,
   VStack,
-  Icon,
-  Divider,
   HStack,
   Text,
   Link,
 } from "native-base";
-import { GoogleIcon } from "../common/icons";
-import { FacebookIcon } from "../common/icons/FacebookIcon";
 import { Colors } from "../common/Design/Colors";
 import { LOGIN_SCREEN } from "./constants";
+import { FacebookLoginButton, GoogleLoginButton } from "../common/components";
 
 const RegisterScreen = ({ navigation, route }) => {
   const [fullName, setFullName] = useState("");
@@ -76,19 +71,8 @@ const RegisterScreen = ({ navigation, route }) => {
           </Button>
 
           <VStack my={10} space="3">
-            <Button leftIcon={<GoogleIcon />} bg="white" shadow={1}>
-              Log In With Google
-            </Button>
-            <Button
-              leftIcon={<FacebookIcon />}
-              bg={Colors.Social.Facebook}
-              _text={{
-                color: Colors.Social.Google,
-              }}
-              shadow={1}
-            >
-              Log In With Facebook
-            </Button>
+            <GoogleLoginButton />
+            <FacebookLoginButton />
           </VStack>
 
           <HStack mx="auto">

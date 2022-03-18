@@ -1,9 +1,12 @@
-import { View } from "react-native";
-
 import React from "react";
+import { Center, Text } from "native-base";
 
 const HomeScreen = ({ navigation, route }) => {
-  return <View></View>;
+  return (
+    <Center>
+      <Text>Home</Text>
+    </Center>
+  );
 };
 
 export { HomeScreen };

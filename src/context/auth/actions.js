@@ -66,7 +66,7 @@ export const googleLogin = (dispatch) => {
       dispatch({ type: LOGIN_REQUEST });
       GoogleSignin.configure({
         webClientId:
-          "1016502809821-hb00bk6iidch454vhpjqvapdtsbcegv6.apps.googleusercontent.com",
+          "85762942481-gnqg417h4vigvf296rtcji0v6sqth4lq.apps.googleusercontent.com",
       });
       await GoogleSignin.hasPlayServices();
       const { idToken, user } = await GoogleSignin.signIn();
