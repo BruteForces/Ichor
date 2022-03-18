@@ -1,2 +1,2 @@
-export { GoogleLoginButton } from "./GoogleLoginButton";
-export { FacebookLoginButton } from "./FacebookLoginButton";
+export { GoogleLoginButton } from "./UI/GoogleLoginButton";
+export { FacebookLoginButton } from "./UI/FacebookLoginButton";

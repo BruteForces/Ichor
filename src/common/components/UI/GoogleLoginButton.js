@@ -1,9 +1,8 @@
-import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { Button } from "native-base";
-import { GoogleIcon } from "../icons";
-import { googleLogin } from "../../context/auth/actions";
-import { useAuthDispatchContext } from "../../context/auth/AuthContext";
+import { GoogleIcon } from "../../icons";
+import { googleLogin } from "../../../context/auth/actions";
+import { useAuthDispatchContext } from "../../../context/auth/AuthContext";
 
 const GoogleLoginButton = () => {
   const dispatch = useAuthDispatchContext();

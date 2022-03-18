@@ -6,7 +6,7 @@ export const Colors = {
   SecondaryText: "#7A848D",
 
   BloodRed: "#E74242",
-
+  White: "#fff",
   Social: {
     Google: "#ffffff",
     Facebook: "#1877F2",
