@@ -7,3 +7,7 @@ export { DetailsIcon } from "./DetailsIcon";
 export { SearchIcon } from "./SearchIcon";
 export { DonorChatIcon } from "./DonorChatIcon";
 export { BloodIcon } from "./BloodIcon";
+export { ArrowBack } from "./ArrowBack";
+export { EditIcon } from "./EditIcon";
+export { SuccessIcon } from "./SuccessIcon";
+export { HistoryIcon } from "./HistoryIcon";

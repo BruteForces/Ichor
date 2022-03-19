@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Divider, Flex, HStack, Text, VStack } from "native-base";
-import Profile from "./Profile";
+import { Profile } from "./Profile";
 import { BloodIcon, ChatIcon, DetailsIcon, DonorChatIcon } from "../icons";
 import { Colors } from "../Design/Colors";
 import { VerticalRuleSVG as VR } from "./VerticalRuleSVG";
