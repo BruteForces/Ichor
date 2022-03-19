@@ -33,7 +33,7 @@ const Header = () => {
           </Text>
           <Text color={Colors.PureWhite}>Hidden Leaf Village, Konaha</Text>
         </VStack>
-        <Profile />
+        <Profile size={-1} />
       </Flex>
     </Box>
   );
@@ -134,7 +134,7 @@ const HomeScreen = ({ navigation, route }) => {
       />
       <VStack>
         <Header />
-        <ScrollView>
+        <ScrollView mb={"20"}>
           <Stats />
           <Text
             mt="15px"
@@ -146,9 +146,12 @@ const HomeScreen = ({ navigation, route }) => {
           >
             Nearby Donors
           </Text>
-          <Box px={18} py={10}>
+          <VStack px={18} py={10} space={2}>
             <DonorCard />
-          </Box>
+            <DonorCard />
+            <DonorCard />
+            <DonorCard />
+          </VStack>
         </ScrollView>
       </VStack>
     </Box>
