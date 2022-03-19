@@ -9,6 +9,7 @@ import {
   CHAT_SCREEN,
   HOME_SCREEN,
   LOGIN_SCREEN,
+  PROFILE_SCREEN,
   REGISTER_SCREEN,
   TOP_DONORS_SCREEN,
 } from "./screens/constants";
@@ -18,6 +19,7 @@ import {
   RegisterScreen,
   ChatScreen,
   TopDonorsScreen,
+  ProfileScreen,
 } from "./screens";
 import { ChatIcon, HomeIcon, MedalIcon } from "./common/icons";
 import { NavigationContainer } from "@react-navigation/native";
@@ -26,7 +28,21 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Box } from "native-base";
 
 const AuthStack = createNativeStackNavigator();
+const HomeStack = createNativeStackNavigator();
 const MainTab = createBottomTabNavigator();
+
+const Home = () => {
+  return (
+    <HomeStack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+      <HomeStack.Screen component={HomeScreen} name={HOME_SCREEN} />
+      <HomeStack.Screen component={ProfileScreen} name={PROFILE_SCREEN} />
+    </HomeStack.Navigator>
+  );
+};
 
 const App = () => {
   const { user } = useAuthContext();
@@ -42,6 +58,9 @@ const App = () => {
 
   return (
     <NavigationContainer>
+      {/* <ProfileStack.Navigator>
+        <ProfileStack.Screen component={ProfileScreen} name={PROFILE_SCREEN} />
+      </ProfileStack.Navigator> */}
       {user ? (
         <MainTab.Navigator
           initialRouteName={HOME_SCREEN}
@@ -67,7 +86,7 @@ const App = () => {
             name={TOP_DONORS_SCREEN}
             component={TopDonorsScreen}
           />
-          <MainTab.Screen name={HOME_SCREEN} component={HomeScreen} />
+          <MainTab.Screen name={HOME_SCREEN} component={Home} />
           <MainTab.Screen name={CHAT_SCREEN} component={ChatScreen} />
         </MainTab.Navigator>
       ) : (

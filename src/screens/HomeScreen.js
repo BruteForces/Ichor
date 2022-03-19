@@ -7,6 +7,7 @@ import {
   Heading,
   HStack,
   Image,
+  Pressable,
   ScrollView,
   StatusBar,
   Text,
@@ -15,9 +16,10 @@ import {
 import { Colors } from "../common/Design/Colors";
 import { DetailsIcon, SearchIcon } from "../common/icons";
 import { DonorCard } from "../common/components/DonorCard";
-import Profile from "../common/components/Profile";
+import { Profile } from "../common/components/";
+import { PROFILE_SCREEN } from "./constants";
 
-const Header = () => {
+const Header = ({ onProfileClick }) => {
   return (
     <Box bg={Colors.PrimaryBg}>
       <Flex
@@ -33,7 +35,9 @@ const Header = () => {
           </Text>
           <Text color={Colors.PureWhite}>Hidden Leaf Village, Konaha</Text>
         </VStack>
-        <Profile size={-1} />
+        <Pressable onPress={onProfileClick}>
+          <Profile size={-1} />
+        </Pressable>
       </Flex>
     </Box>
   );
@@ -123,6 +127,10 @@ const Stats = () => {
 };
 
 const HomeScreen = ({ navigation, route }) => {
+  const onProfileClickHandler = () => {
+    navigation.navigate(PROFILE_SCREEN);
+  };
+
   return (
     <Box safeArea flex={1} w="full">
       <StatusBar
@@ -133,7 +141,7 @@ const HomeScreen = ({ navigation, route }) => {
         hidden={true}
       />
       <VStack>
-        <Header />
+        <Header onProfileClick={onProfileClickHandler} />
         <ScrollView mb={"20"}>
           <Stats />
           <Text

@@ -8,6 +8,7 @@ export const Colors = {
 
   BloodRed: "#E74242",
   DarkGray: "#5E6A76",
+  SlightGray: "#E5E4E4",
   SalientGray: "#F8F7F7",
 
   PureWhite: "#fff",
