@@ -5,3 +5,5 @@ export { ChatIcon } from "./ChatIcon";
 export { FacebookIcon } from "./FacebookIcon";
 export { DetailsIcon } from "./DetailsIcon";
 export { SearchIcon } from "./SearchIcon";
+export { DonorChatIcon } from "./DonorChatIcon";
+export { BloodIcon } from "./BloodIcon";

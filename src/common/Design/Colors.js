@@ -8,8 +8,9 @@ export const Colors = {
 
   BloodRed: "#E74242",
   DarkGray: "#5E6A76",
+  SalientGray: "#F8F7F7",
 
-  White: "#fff",
+  PureWhite: "#fff",
   Social: {
     Google: "#ffffff",
     Facebook: "#1877F2",

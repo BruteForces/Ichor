@@ -8,11 +8,14 @@ import {
   HStack,
   Image,
   ScrollView,
+  StatusBar,
   Text,
   VStack,
 } from "native-base";
 import { Colors } from "../common/Design/Colors";
 import { DetailsIcon, SearchIcon } from "../common/icons";
+import { DonorCard } from "../common/components/DonorCard";
+import Profile from "../common/components/Profile";
 
 const Header = () => {
   return (
@@ -21,21 +24,16 @@ const Header = () => {
         direction="row"
         justifyContent={"space-between"}
         alignItems="center"
-        py="20px"
-        px={"20px"}
+        py="15"
+        px={"15"}
       >
         <VStack>
-          <Text fontSize={"24px"} fontWeight="bold" color={Colors.White}>
+          <Text fontSize={"20"} fontWeight="bold" color={Colors.PureWhite}>
             Hi, Naruto Uzumaki
           </Text>
-          <Text color={Colors.White}>Hidden Leaf Village, Konaha</Text>
+          <Text color={Colors.PureWhite}>Hidden Leaf Village, Konaha</Text>
         </VStack>
-        <Image
-          source={require("../common/images/naruto.jpg")}
-          alt="profile"
-          size={70}
-          borderRadius={100}
-        />
+        <Profile />
       </Flex>
     </Box>
   );
@@ -43,75 +41,75 @@ const Header = () => {
 
 const Stats = () => {
   return (
-    <Box bg={Colors.PrimaryBg} px="13px" pb="26px" pt="15px">
+    <Box bg={Colors.PrimaryBg} px="2" pb="5" pt="4">
       <VStack>
         <HStack
-          borderTopRadius={"8px"}
-          bg={Colors.White}
+          borderTopRadius={"8"}
+          bg={Colors.PureWhite}
           justifyContent={"space-evenly"}
           alignItems={"center"}
           w="full"
-          px="25px"
-          py="17px"
+          px="25"
+          py="17"
         >
           <HStack space={1} alignItems="center">
             <DetailsIcon />
             <Text>blood.</Text>
-            <Text fontWeight="bold" fontSize={"18px"}>
+            <Text fontWeight="bold" fontSize={"15"}>
               A
             </Text>
           </HStack>
           <HStack space={1} alignItems="center">
             <Text>age.</Text>
-            <Text fontWeight="bold" fontSize={"18px"}>
+            <Text fontWeight="bold" fontSize={"15"}>
               24
             </Text>
           </HStack>
           <HStack space={1} alignItems="center">
             <Text>weight.</Text>
-            <Text fontWeight="bold" fontSize={"18px"}>
+            <Text fontWeight="bold" fontSize={"15"}>
               65 Kg
             </Text>
           </HStack>
         </HStack>
         <HStack
-          px="19px"
-          py="13px"
+          px="15"
+          py="13"
           bg={Colors.DarkGray}
-          borderBottomRadius={"8px"}
+          borderBottomRadius={"8"}
           w="full"
           justifyContent={"space-evenly"}
         >
-          <Button borderRadius="27px" px="23px" py="12px" bg={Colors.White}>
+          <Button borderRadius="15" bg={Colors.PureWhite}>
             <HStack
               alignItems="center"
               justifyContent="space-between"
               space={2}
             >
               <VStack>
-                <Text fontWeight="bold" fontSize="18px" color={Colors.DarkBlue}>
+                <Text fontWeight="bold" fontSize="15" color={Colors.DarkBlue}>
                   Blood
                 </Text>
-                <Text fontWeight="bold" fontSize="18px" color={Colors.DarkBlue}>
+                <Text fontWeight="bold" fontSize="15" color={Colors.DarkBlue}>
                   Points
                 </Text>
               </VStack>
-              <Text fontWeight="bold" fontSize="30px" color={Colors.BloodRed}>
+              <Text fontWeight="bold" fontSize="30" color={Colors.BloodRed}>
                 1.2K
               </Text>
             </HStack>
           </Button>
-          <Button borderRadius="27px" px="23px" py="12px" bg={Colors.White}>
+          <Button borderRadius="15" bg={Colors.PureWhite}>
             <HStack
               alignItems="center"
               justifyContent="space-between"
               space={2}
             >
               <VStack>
-                <Text fontWeight="bold" fontSize="18px" color={Colors.DarkBlue}>
+                <Text fontWeight="bold" fontSize="15" color={Colors.DarkBlue}>
                   Search
                 </Text>
-                <Text fontWeight="bold" fontSize="18px" color={Colors.DarkBlue}>
+                <Text fontWeight="bold" fontSize="15" color={Colors.DarkBlue}>
                   Donors
                 </Text>
               </VStack>
@@ -127,10 +125,30 @@ const Stats = () => {
 const HomeScreen = ({ navigation, route }) => {
   return (
     <Box safeArea flex={1} w="full">
+      <StatusBar
+        backgroundColor={Colors.PrimaryBg}
+        animated={true}
+        barStyle="light-content"
+        showHideTransition={"fade"}
+        hidden={true}
+      />
       <VStack>
         <Header />
         <ScrollView>
           <Stats />
+          <Text
+            mt="15px"
+            mx="18px"
+            w="full"
+            fontWeight="bold"
+            color={Colors.DarkGray}
+            fontSize="18px"
+          >
+            Nearby Donors
+          </Text>
+          <Box px={18} py={10}>
+            <DonorCard />
+          </Box>
         </ScrollView>
       </VStack>
     </Box>
