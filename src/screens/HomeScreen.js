@@ -146,7 +146,7 @@ const HomeScreen = ({ navigation, route }) => {
           >
             Nearby Donors
           </Text>
-          <VStack px={18} py={10} space={2}>
+          <VStack px={18} pt={4} pb={8} space={2}>
             <DonorCard />
             <DonorCard />
             <DonorCard />
