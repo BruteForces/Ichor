@@ -13,3 +13,4 @@ export { ArrowBack } from "./ArrowBack";
 export { EditIcon } from "./EditIcon";
 export { SuccessIcon } from "./SuccessIcon";
 export { HistoryIcon } from "./HistoryIcon";
+export { BurgerIcon } from "./BurgerIcon";
