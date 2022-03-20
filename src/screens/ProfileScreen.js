@@ -1,9 +1,9 @@
-import { View } from "react-native";
 import React from "react";
 import {
   Box,
   Heading,
   HStack,
+  Menu,
   Pressable,
   ScrollView,
   Text,
@@ -13,8 +13,8 @@ import { Colors } from "../common/Design/Colors";
 import {
   ArrowBack,
   BloodIcon,
+  BurgerIcon,
   DetailsIcon,
-  EditIcon,
   HistoryIcon,
   SuccessIcon,
 } from "../common/icons";
@@ -49,11 +49,25 @@ const Header = () => {
             <ArrowBack />
           </Pressable>
           <Text fontWeight="bold" fontSize="md" color={Colors.DarkGray}>
-            @databayo
+            @databayyo
           </Text>
-          <Pressable onPress={() => {}}>
-            <EditIcon />
-          </Pressable>
+          <Box>
+            <Menu
+              onOpen={() => {
+                console.log("Hello");
+              }}
+              trigger={(triggerProps) => {
+                return (
+                  <Pressable {...triggerProps}>
+                    <BurgerIcon />
+                  </Pressable>
+                );
+              }}
+            >
+              <Menu.Item>Edit</Menu.Item>
+              <Menu.Item>Sign Out</Menu.Item>
+            </Menu>
+          </Box>
         </HStack>
         <UserCard />
       </VStack>
