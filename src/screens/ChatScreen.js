@@ -1,5 +1,5 @@
 import { StyleSheet, View } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import {
   Box,
   Button,
@@ -14,31 +14,41 @@ import {
   ScrollView
 } from "native-base";
 import { Colors } from "../common/Design/Colors";
-import { PencilIcon } from "../common/icons";
+import { PencilIcon, TickIcon } from "../common/icons";
+
 import { Profile } from "../common/components";
 import { ChatCard } from "../common/components";
+import { PROFILE_SCREEN } from "./constants";
 
-const ChatScreen = () => {
-  const onProfileClick = () => {
-    console.log("Profile Clicked");
+
+const ChatScreen = ({ navigation, route }) => {
+  const [pressed, setPressed] = useState(false);
+
+  const onProfileClickHandler = () => {
+    navigation.navigate(PROFILE_SCREEN);
+  }
+  const onPencilClickHandler = () => {
+    setPressed(!pressed);
   }
   return (
     <View >
       <Box safeArea w="100%" h="100%" >
-        <Box w="100%" h="80px" bg={Colors.PrimaryBg}>
+        <Box w="100%" h="10%" bg={Colors.PrimaryBg}>
           <VStack
             flex={1}
             justifyContent="center"
           >
             <HStack
-              mx={3}
+              mx={4}
               alignItems="center"
               justifyContent="space-between"
             >
-              <PencilIcon />
-              <Text fontSize={"20"} fontWeight="bold" color={Colors.PureWhite} >Messages</Text>
-              <Pressable onPress={onProfileClick}>
-                <Profile size={-1} />
+              <Pressable onPress={onPencilClickHandler}>
+                {pressed ? <TickIcon /> : <PencilIcon />}
+              </Pressable>
+              <Text fontSize={20} fontWeight="bold" color={Colors.PureWhite} >Messages</Text>
+              <Pressable onPress={onProfileClickHandler}>
+                <Profile size={-2} />
               </Pressable>
             </HStack>
           </VStack>
@@ -56,18 +66,19 @@ const ChatScreen = () => {
               mt={2}
             >
 
-              <ChatCard />
-              <ChatCard />
-              <ChatCard />
-              <ChatCard />
-              <ChatCard />
-              <ChatCard />
-              <ChatCard />
-              <ChatCard />
-              <ChatCard />
-              <ChatCard />
-              <ChatCard />
-              <ChatCard />
+              <ChatCard Pressed={pressed} />
+              <ChatCard Pressed={pressed} />
+              <ChatCard Pressed={pressed} />
+              <ChatCard Pressed={pressed} />
+              <ChatCard Pressed={pressed} />
+              <ChatCard Pressed={pressed} />
+              <ChatCard Pressed={pressed} />
+              <ChatCard Pressed={pressed} />
+              <ChatCard Pressed={pressed} />
+              <ChatCard Pressed={pressed} />
+              <ChatCard Pressed={pressed} />
+              <ChatCard Pressed={pressed} />
+              <ChatCard Pressed={pressed} />
             </VStack>
           </ScrollView>
         </Box>

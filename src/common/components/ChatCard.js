@@ -1,11 +1,11 @@
 import React from 'react';
-import { Box, HStack, VStack, Text } from 'native-base';
+import { Box, HStack, VStack, Text, Pressable } from 'native-base';
 import { Profile } from './Profile';
 import { Colors } from '../Design/Colors';
 import { ReadReceiptIcon } from '../icons';
 
 
-const ChatCard = () => {
+const ChatCard = ({ Pressed }) => {
   return (
     <Box
       bg={Colors.SalientGray}
@@ -35,12 +35,19 @@ const ChatCard = () => {
 
           py={3}
           px={3}
+          justifyContent="center"
 
         >
-          <Text fontSize={13} color={Colors.SecondaryText}>9.45 PM</Text>
-          <Box alignSelf="flex-end">
-            <ReadReceiptIcon />
-          </Box>
+          {Pressed ?
+            (<Pressable >
+              <Text fontSize={20} alignSelf="center" fontWeight="bold" color={Colors.BloodRed}>X</Text>
+            </Pressable>) :
+            (<Box>
+              <Text fontSize={13} color={Colors.SecondaryText}>9.45 PM</Text>
+              <Box alignSelf="flex-end">
+                <ReadReceiptIcon />
+              </Box>
+            </Box>)}
         </VStack>
       </HStack>
     </Box>

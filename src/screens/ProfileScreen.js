@@ -52,7 +52,7 @@ const Header = () => {
             @databayyo
           </Text>
           <Box>
-            <Menu
+            {/* <Menu
               onOpen={() => {
                 console.log("Hello");
               }}
@@ -66,7 +66,7 @@ const Header = () => {
             >
               <Menu.Item>Edit</Menu.Item>
               <Menu.Item>Sign Out</Menu.Item>
-            </Menu>
+            </Menu> */}
           </Box>
         </HStack>
         <UserCard />
