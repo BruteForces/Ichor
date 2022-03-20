@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, HStack, VStack, Text } from 'native-base';
-import Profile from './Profile';
+import { Profile } from './Profile';
 import { Colors } from '../Design/Colors';
 import { ReadReceiptIcon } from '../icons';
 
@@ -18,12 +18,12 @@ const ChatCard = () => {
 
     >
       <HStack>
-        <Profile  size={-3} />
+        <Profile size={-3} />
         <VStack
           flex={1}
           p={2}
           px={3}
-          
+
         >
           <Text
             fontSize={16}
@@ -39,7 +39,7 @@ const ChatCard = () => {
         >
           <Text fontSize={13} color={Colors.SecondaryText}>9.45 PM</Text>
           <Box alignSelf="flex-end">
-            <ReadReceiptIcon  />
+            <ReadReceiptIcon />
           </Box>
         </VStack>
       </HStack>
@@ -47,4 +47,4 @@ const ChatCard = () => {
   )
 }
 
-export default ChatCard;
+export { ChatCard };

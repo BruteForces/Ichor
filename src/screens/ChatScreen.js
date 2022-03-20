@@ -15,8 +15,8 @@ import {
 } from "native-base";
 import { Colors } from "../common/Design/Colors";
 import { PencilIcon } from "../common/icons";
-import Profile from "../common/components/Profile";
-import ChatCard from "../common/components/ChatCard";
+import { Profile } from "../common/components";
+import { ChatCard } from "../common/components";
 
 const ChatScreen = () => {
   const onProfileClick = () => {
