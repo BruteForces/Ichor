@@ -7,4 +7,4 @@ const Profile = ({ size = 1 }) => {
   return <Avatar size={`${radius}`} source={require("../images/naruto.jpg")} />;
 };
 
-export default Profile;
+export { Profile };
