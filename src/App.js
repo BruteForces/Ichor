@@ -8,6 +8,7 @@ import {
 import {
   CHAT_SCREEN,
   HOME_SCREEN,
+  HOME_TABS,
   LOGIN_SCREEN,
   PROFILE_SCREEN,
   REGISTER_SCREEN,
@@ -34,6 +35,7 @@ const MainTab = createNativeStackNavigator();
 const HomeTabs = () => {
   return (
     <HomeTab.Navigator
+      initialRouteName={HOME_SCREEN}
       screenOptions={({ route }) => ({
         headerShown: false,
         tabBarShowLabel: false,
@@ -73,17 +75,13 @@ const App = () => {
 
   return (
     <NavigationContainer>
-      {/* <ProfileStack.Navigator>
-        <ProfileStack.Screen component={ProfileScreen} name={PROFILE_SCREEN} />
-      </ProfileStack.Navigator> */}
       {user ? (
         <MainTab.Navigator
-          initialRouteName={HOME_SCREEN}
           screenOptions={{
             headerShown: false,
           }}
         >
-          <MainTab.Screen name={HOME_SCREEN} component={HomeTabs} />
+          <MainTab.Screen name={HOME_TABS} component={HomeTabs} />
           <MainTab.Screen name={PROFILE_SCREEN} component={ProfileScreen} />
         </MainTab.Navigator>
       ) : (
@@ -92,10 +90,6 @@ const App = () => {
             headerShown: false,
           }}
         >
-          {/* <Stack.Screen
-            name={GETTING_STARTED_SCREEN}
-            component={GettingStarted}
-          /> */}
           <AuthStack.Screen name={REGISTER_SCREEN} component={RegisterScreen} />
           <AuthStack.Screen name={LOGIN_SCREEN} component={LoginScreen} />
         </AuthStack.Navigator>
