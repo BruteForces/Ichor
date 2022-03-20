@@ -53,7 +53,7 @@ const App = () => {
                 return <HomeIcon focused={focused} />;
               } else if (route.name === CHAT_SCREEN) {
                 return (
-                  <Box mt={2}>
+                  <Box mt={3}>
                     <ChatIcon focused={focused} />
                   </Box>
                 );
