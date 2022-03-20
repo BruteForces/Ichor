@@ -28,19 +28,34 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Box } from "native-base";
 
 const AuthStack = createNativeStackNavigator();
-const HomeStack = createNativeStackNavigator();
-const MainTab = createBottomTabNavigator();
+const HomeTab = createBottomTabNavigator();
+const MainTab = createNativeStackNavigator();
 
-const Home = () => {
+const HomeTabs = () => {
   return (
-    <HomeStack.Navigator
-      screenOptions={{
+    <HomeTab.Navigator
+      screenOptions={({ route }) => ({
         headerShown: false,
-      }}
+        tabBarShowLabel: false,
+        tabBarIcon: ({ color, size, focused }) => {
+          if (route.name === HOME_SCREEN) {
+            return <HomeIcon focused={focused} />;
+          } else if (route.name === CHAT_SCREEN) {
+            return (
+              <Box mt={2}>
+                <ChatIcon focused={focused} />
+              </Box>
+            );
+          } else if (route.name === TOP_DONORS_SCREEN) {
+            return <MedalIcon focused={focused} />;
+          }
+        },
+      })}
     >
-      <HomeStack.Screen component={HomeScreen} name={HOME_SCREEN} />
-      <HomeStack.Screen component={ProfileScreen} name={PROFILE_SCREEN} />
-    </HomeStack.Navigator>
+      <HomeTab.Screen name={TOP_DONORS_SCREEN} component={TopDonorsScreen} />
+      <HomeTab.Screen component={HomeScreen} name={HOME_SCREEN} />
+      <HomeTab.Screen name={CHAT_SCREEN} component={ChatScreen} />
+    </HomeTab.Navigator>
   );
 };
 
@@ -64,30 +79,12 @@ const App = () => {
       {user ? (
         <MainTab.Navigator
           initialRouteName={HOME_SCREEN}
-          screenOptions={({ route }) => ({
+          screenOptions={{
             headerShown: false,
-            tabBarShowLabel: false,
-            tabBarIcon: ({ color, size, focused }) => {
-              if (route.name === HOME_SCREEN) {
-                return <HomeIcon focused={focused} />;
-              } else if (route.name === CHAT_SCREEN) {
-                return (
-                  <Box mt={2}>
-                    <ChatIcon focused={focused} />
-                  </Box>
-                );
-              } else if (route.name === TOP_DONORS_SCREEN) {
-                return <MedalIcon focused={focused} />;
-              }
-            },
-          })}
+          }}
         >
-          <MainTab.Screen
-            name={TOP_DONORS_SCREEN}
-            component={TopDonorsScreen}
-          />
-          <MainTab.Screen name={HOME_SCREEN} component={Home} />
-          <MainTab.Screen name={CHAT_SCREEN} component={ChatScreen} />
+          <MainTab.Screen name={HOME_SCREEN} component={HomeTabs} />
+          <MainTab.Screen name={PROFILE_SCREEN} component={ProfileScreen} />
         </MainTab.Navigator>
       ) : (
         <AuthStack.Navigator
