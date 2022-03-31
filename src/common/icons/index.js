@@ -14,3 +14,4 @@ export { EditIcon } from "./EditIcon";
 export { SuccessIcon } from "./SuccessIcon";
 export { HistoryIcon } from "./HistoryIcon";
 export { BurgerIcon } from "./BurgerIcon";
+export { TickIcon } from "./TickIcon";
