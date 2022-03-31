@@ -5,3 +5,4 @@ export { DonorCard } from "./DonorCard";
 export { Profile } from "./Profile";
 export { DonationHistoryCard } from "./DonationHistoryCard";
 export { ChatCard } from "./ChatCard";
+export { RankerCard } from "./RankerCard";

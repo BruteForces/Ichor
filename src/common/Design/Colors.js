@@ -10,8 +10,10 @@ export const Colors = {
   DarkGray: "#5E6A76",
   SlightGray: "#E5E4E4",
   SalientGray: "#F8F7F7",
-
+  LightGray: "#56606D",
+  
   PureWhite: "#fff",
+
   Social: {
     Google: "#ffffff",
     Facebook: "#1877F2",
